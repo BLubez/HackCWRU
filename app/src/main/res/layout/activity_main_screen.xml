@@ -9,12 +9,11 @@
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
     <WebView
-        android:id="@+id/WebObject"
+        android:id="@+id/webobject"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:keepScreenOn="true"
-        >
+        android:keepScreenOn="true">
 
     </WebView>
 
