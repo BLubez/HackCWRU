@@ -38,7 +38,7 @@ public class MainScreen extends AppCompatActivity {
      */
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler();
-    private View mContentView;
+    private WebView mContentView;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -110,10 +110,10 @@ public class MainScreen extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
 
         mVisible = true;
-        //mControlsView = findViewById(R.id.fullscreen_content_controls);
+        mControlsView = findViewById(R.id.fullscreen_content_controls);
         //mContentView = findViewById(R.id.fullscreen_content);
-        WebView display = (WebView) findViewById(R.id.webobject);
-        display.setWebViewClient(new MyWebView());
+        mContentView = (WebView) findViewById(R.id.webobject);
+        mContentView.setWebViewClient(new MyWebView());
 
 
         // Set up the user interaction to manually show or hide the system UI.
@@ -132,10 +132,10 @@ public class MainScreen extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
-        display.getSettings().setLoadsImagesAutomatically(true);
-        display.getSettings().setJavaScriptEnabled(true);
-        display.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        display.loadUrl("https://www.google.com");
+        mContentView.getSettings().setLoadsImagesAutomatically(true);
+        mContentView.getSettings().setJavaScriptEnabled(true);
+        mContentView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        mContentView.loadUrl("http://www.google.com");
     }
 
     @Override
