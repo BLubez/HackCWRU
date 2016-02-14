@@ -135,7 +135,7 @@ public class MainScreen extends AppCompatActivity {
         mContentView.getSettings().setLoadsImagesAutomatically(true);
         mContentView.getSettings().setJavaScriptEnabled(true);
         mContentView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-        mContentView.loadUrl("http://www.google.com");
+
     }
 
     @Override
@@ -209,6 +209,7 @@ public class MainScreen extends AppCompatActivity {
                 Uri.parse("android-app://com.mastrdatr.mastrdatr/http/host/path")
         );
         AppIndex.AppIndexApi.start(client, viewAction);
+        mContentView.loadUrl("file:///android_asset/MastrDatr-master/index.html");
     }
 
     @Override
