@@ -1,2 +1,0 @@
-# MastrDatr
-Emergency Dating App

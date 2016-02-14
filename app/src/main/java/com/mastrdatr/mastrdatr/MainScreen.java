@@ -209,7 +209,10 @@ public class MainScreen extends AppCompatActivity {
                 Uri.parse("android-app://com.mastrdatr.mastrdatr/http/host/path")
         );
         AppIndex.AppIndexApi.start(client, viewAction);
-        mContentView.loadUrl("file:///android_asset/MastrDatr-master/index.html");
+
+        mContentView.clearCache(true);
+        mContentView.getSettings().setAppCacheEnabled(false);
+        mContentView.loadUrl("http://mastrdatr.com.s3-website-us-east-1.amazonaws.com");
     }
 
     @Override
